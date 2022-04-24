@@ -9,6 +9,8 @@ export default {
   next: 'Next',
   notAttended: 'Not Attended',
   notCompleted: 'Not Completed',
+  pageReloadWarningText:
+    'All data will be lost if you leave the page, are you sure?',
   previous: 'Previous',
   questionnaire: 'Questionnaire',
   questionnaires: 'Questionnaires',

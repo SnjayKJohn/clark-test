@@ -81,5 +81,8 @@ export default {
       return this.$nuxt.$route.params?.id
     },
   },
+  created() {
+    window.onbeforeunload = () => this.$nuxt.$t('pageReloadWarningText')
+  },
 }
 </script>

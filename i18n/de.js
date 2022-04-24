@@ -9,6 +9,8 @@ export default {
   next: 'Nächste',
   notAttended: 'Nicht besucht',
   notCompleted: 'Nicht vollständig',
+  pageReloadWarningText:
+    'Alle Daten gehen verloren, wenn Sie die Seite verlassen, sind Sie sicher?',
   previous: 'Bisherige',
   questionnaire: 'Fragebogen',
   questionnaires: 'Fragebögen',
