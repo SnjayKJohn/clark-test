@@ -4,7 +4,7 @@ export default {
   finish: 'Beenden',
   help: 'Hilfe',
   helpText:
-    'Dies ist eine kleine Fragebogen-Webanwendung. Bitte kontaktieren Sie mich unter sanjaykjiohnkalarikkal@gmail.com für weitere Unterstützung.',
+    'Dies ist eine kleine Fragebogen-Webanwendung. Bitte kontaktieren Sie mich unter sanjaykjohnkalarikkal@gmail.com für weitere Unterstützung.',
   home: 'Heim',
   languageSettings: 'Spracheinstellungen',
   next: 'Nächste',

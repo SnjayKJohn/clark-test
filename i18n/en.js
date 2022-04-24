@@ -4,7 +4,7 @@ export default {
   finish: 'Finish',
   help: 'Help',
   helpText:
-    'This is a small questionnaire web application. Please reach out to me at sanjaykjiohnkalarikkal@gmail.com for further support.',
+    'This is a small questionnaire web application. Please reach out to me at sanjaykjohnkalarikkal@gmail.com for further support.',
   home: 'Home',
   languageSettings: 'Language Settings',
   next: 'Next',
