@@ -3,7 +3,8 @@ export default {
   completed: 'Completed',
   finish: 'Finish',
   help: 'Help',
-  helpText: 'Help sample text here...',
+  helpText:
+    'This is a small questionnaire web application. Please reach out to me at sanjaykjiohnkalarikkal@gmail.com for further support.',
   home: 'Home',
   languageSettings: 'Language Settings',
   next: 'Next',
