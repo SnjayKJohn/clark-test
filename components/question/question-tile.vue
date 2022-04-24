@@ -95,12 +95,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 .question-text {
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-weight: 600;
   color: white;
 }
 .option-text {
-  font-size: 1.2em;
+  font-size: 1.15em;
   font-weight: 500;
   color: white;
 }
