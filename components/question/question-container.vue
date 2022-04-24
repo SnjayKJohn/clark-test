@@ -111,6 +111,9 @@ export default {
   computed: {
     ...mapState(['questionnaire', 'currentQuestionIndex']),
     ...mapGetters(['getQuestionIndex', 'questions']),
+    currentQuestion() {
+      return this.questions[this.model]
+    },
   },
   methods: {
     ...mapMutations([
@@ -121,12 +124,16 @@ export default {
       'SET_PREVIOUS',
     ]),
     checkValidAnswer() {
-      const answer = this.questions[this.model]?.answer
-      this.isValidAnswer = Array.isArray(answer)
-        ? answer.length
-        : typeof answer === 'string'
-        ? answer.trim()
-        : answer
+      if (this.currentQuestion.required) {
+        const answer = this.currentQuestion?.answer
+        this.isValidAnswer = Array.isArray(answer)
+          ? answer.length
+          : typeof answer === 'string'
+          ? answer.trim()
+          : answer
+      } else {
+        this.isValidAnswer = true
+      }
     },
     handleAnswerChange(index, answer) {
       this.RECORD_ANSWER({ index, answer })
@@ -134,32 +141,32 @@ export default {
     },
     setNextNode() {
       this.checkValidAnswer()
-      const question = this.questions[this.model]
-      if (question?.jumps?.length) {
-        const jumpToItem = question.jumps.find((el) =>
-          el.conditions.find((condition) => condition.value == question.answer)
+      const next = this.questions[this.model + 1]
+      this.SET_NEXT({
+        index: this.model,
+        next: next?.identifier || false,
+      })
+      if (this.currentQuestion?.jumps?.length) {
+        const jumpToItem = this.currentQuestion.jumps.find((el) =>
+          el.conditions.find(
+            (condition) => condition.value == this.currentQuestion.answer
+          )
         )
         if (jumpToItem?.destination?.id) {
           this.SET_NEXT({ index: this.model, next: jumpToItem.destination.id })
         }
-      } else {
-        const next = this.questions[this.model + 1]
-        this.SET_NEXT({
-          index: this.model,
-          next: next?.identifier || false,
-        })
       }
     },
     handleNext() {
       this.setNextNode()
-      const prev = this.questions[this.model].identifier
-      this.model = this.getQuestionIndex(this.questions[this.model].next)
+      const prev = this.currentQuestion.identifier
+      this.model = this.getQuestionIndex(this.currentQuestion?.next)
       this.SET_PREVIOUS({ index: this.model, previous: prev })
       this.SET_CURRENT_QUESTION_INDEX(this.model)
       this.setNextNode()
     },
     handlePrevious() {
-      this.model = this.getQuestionIndex(this.questions[this.model].previous)
+      this.model = this.getQuestionIndex(this.currentQuestion?.previous)
       this.SET_CURRENT_QUESTION_INDEX(this.model)
       this.setNextNode()
     },
