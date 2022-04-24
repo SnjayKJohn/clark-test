@@ -1,0 +1,18 @@
+export default {
+  cancel: 'Absagen',
+  completed: 'Abgeschlossen',
+  finish: 'Beenden',
+  help: 'Hilfe',
+  helpText: 'Hilfe Beispieltext hier...',
+  home: 'Heim',
+  languageSettings: 'Spracheinstellungen',
+  next: 'Nächste',
+  notAttended: 'Nicht besucht',
+  notCompleted: 'Nicht vollständig',
+  previous: 'Bisherige',
+  questionnaire: 'Fragebogen',
+  questionnaires: 'Fragebögen',
+  save: 'Speichern',
+  thanksForCompletingText: 'Vielen Dank für das Ausfüllen des Fragebogens.',
+  yourAnswer: 'Ihre Antwort hier',
+}
