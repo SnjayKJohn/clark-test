@@ -122,7 +122,11 @@ export default {
     ]),
     checkValidAnswer() {
       const answer = this.questions[this.model]?.answer
-      this.isValidAnswer = Array.isArray(answer) ? answer.length : answer
+      this.isValidAnswer = Array.isArray(answer)
+        ? answer.length
+        : typeof answer === 'string'
+        ? answer.trim()
+        : answer
     },
     handleAnswerChange(index, answer) {
       this.RECORD_ANSWER({ index, answer })
