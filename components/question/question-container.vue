@@ -104,17 +104,19 @@ export default {
     }
   },
   mounted() {
+    this.model = this.currentQuestionIndex || 0
     if (!this.questionnaire.status) this.SET_QUESTIONNAIRE_STATUS('incomplete')
     this.setNextNode()
   },
   computed: {
-    ...mapState(['questionnaire']),
+    ...mapState(['questionnaire', 'currentQuestionIndex']),
     ...mapGetters(['getQuestionIndex', 'questions']),
   },
   methods: {
     ...mapMutations([
       'RECORD_ANSWER',
       'SET_QUESTIONNAIRE_STATUS',
+      'SET_CURRENT_QUESTION_INDEX',
       'SET_NEXT',
       'SET_PREVIOUS',
     ]),
@@ -149,10 +151,12 @@ export default {
       const prev = this.questions[this.model].identifier
       this.model = this.getQuestionIndex(this.questions[this.model].next)
       this.SET_PREVIOUS({ index: this.model, previous: prev })
+      this.SET_CURRENT_QUESTION_INDEX(this.model)
       this.setNextNode()
     },
     handlePrevious() {
       this.model = this.getQuestionIndex(this.questions[this.model].previous)
+      this.SET_CURRENT_QUESTION_INDEX(this.model)
       this.setNextNode()
     },
   },

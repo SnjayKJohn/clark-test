@@ -2,11 +2,15 @@ import mock from '../assets/mock/questionnaire.json'
 
 export const state = () => ({
   questionnaire: mock.questionnaire,
+  currentQuestionIndex: 0,
 })
 
 export const mutations = {
   SET_QUESTIONNAIRE_STATUS: function (state, status) {
     state.questionnaire.status = status
+  },
+  SET_CURRENT_QUESTION_INDEX: function (state, currentQuestionIndex) {
+    state.currentQuestionIndex = currentQuestionIndex
   },
   RECORD_ANSWER: function (state, { index, answer }) {
     state.questionnaire.questions[index].answer = answer
