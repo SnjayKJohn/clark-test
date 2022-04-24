@@ -51,7 +51,7 @@
                 class="ma-2 white--text mr-auto"
                 :disabled="!questions[model].previous"
                 outlined
-                min-width="150px"
+                min-width="130px"
                 @click="handlePrevious"
               >
                 <v-icon left dark> mdi-chevron-left </v-icon>
@@ -65,7 +65,7 @@
                 class="ma-2 white--text ml-auto"
                 :disabled="!isValidAnswer"
                 outlined
-                min-width="150px"
+                min-width="130px"
                 @click="$emit('completed')"
               >
                 {{ $t('finish') }}
@@ -78,7 +78,7 @@
                 class="ma-2 white--text ml-auto"
                 :disabled="!isValidAnswer"
                 outlined
-                min-width="150px"
+                min-width="130px"
                 @click="handleNext"
               >
                 {{ $t('next') }}
