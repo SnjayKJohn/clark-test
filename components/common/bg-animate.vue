@@ -27,7 +27,7 @@ export default {}
 
 .area {
   background: #1976d2;
-  background: -webkit-linear-gradient(to left, #429ffb, #1976d2);
+  background: -webkit-linear-gradient(to left, #217eda, #1976d2);
   width: 100%;
   height: 100vh;
 }
