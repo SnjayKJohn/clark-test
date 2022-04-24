@@ -26,9 +26,10 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   mounted() {
     this.SET_QUESTIONNAIRE_STATUS('completed')
+    this.SET_CURRENT_QUESTION_INDEX(0)
   },
   methods: {
-    ...mapMutations(['SET_QUESTIONNAIRE_STATUS']),
+    ...mapMutations(['SET_QUESTIONNAIRE_STATUS', 'SET_CURRENT_QUESTION_INDEX']),
   },
 }
 </script>
